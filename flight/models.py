@@ -14,7 +14,7 @@ class Flight(models.Model):
 
 
 
-class Passenger(models.Model):         
+class Passenger(models.Model):           # cooper - jason - murat ... 
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
     email = models.EmailField()
@@ -25,7 +25,7 @@ class Passenger(models.Model):
         return f'{self.first_name} {self.last_name}'
     
 
-class Reservation(models.Model):    
+class Reservation(models.Model):         #(cooper - murat)  - (cooper - jason) - () ....
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     passenger = models.ManyToManyField(Passenger, related_name="reservations")
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE, related_name="reservation")
